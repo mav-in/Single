@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Single.Part1;
 
 namespace Single
 {
@@ -10,6 +7,8 @@ namespace Single
     {
         static void Main(string[] args)
         {
+            if (args == null) throw new ArgumentNullException(nameof(args));
+            Solution1.Execute();
         }
     }
 }
