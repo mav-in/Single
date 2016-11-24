@@ -1,14 +1,23 @@
-﻿using System;
-using Single.Part1;
+﻿/*начало секции подключаемых пространств имен*/
+using System;
+//using System.Collections.Generic; /*Вложенное пространство имён*/
+//using Single.Part1;
+using Solution = Single.Part2.Solution4;
 
-namespace Single
+/*конец секции подключаемых пространств имен*/
+
+namespace Single /*объявление нового пространства имен*/
 {
-    class Program
+    class Program /*объявление нового класса*/
     {
-        static void Main(string[] args)
+        // начало контекста метода Main
+        static void Main(string[] args) /*объявление нового метода*/
         {
             if (args == null) throw new ArgumentNullException(nameof(args));
-            Solution1.Execute();
-        }
-    }
-}
+            Solution.Execute();
+            Console.ReadLine();
+        } /* конец объявления нового метода*/
+
+    } /* конец объявления нового класса*/
+
+} /* конец объявления нового пространства имен*/

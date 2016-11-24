@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Single.Part1
 {
@@ -10,8 +6,18 @@ namespace Single.Part1
     {
         public static void Execute()
         {
-            Console.WriteLine("Solution1");
-            var readLine = Console.ReadLine();
+            var calc = new Calculator();
+            calc.Add(2, 3);
+        }
+    }
+
+    internal class Calculator
+    {
+        public void Add(int x, int y)
+        {
+            int z = x + y;
+            Console.WriteLine("Сумма {0} и {1} равна {2}", x, y, z);
+            Console.ReadLine();
         }
     }
 }
