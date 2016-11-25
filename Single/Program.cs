@@ -2,7 +2,7 @@
 using System;
 //using System.Collections.Generic; /*Вложенное пространство имён*/
 //using Single.Part1;
-using Solution = Single.Part2.Solution4;
+using Solution = Single.Part2.Solution16;
 
 /*конец секции подключаемых пространств имен*/
 
