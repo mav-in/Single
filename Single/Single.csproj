@@ -60,6 +60,13 @@
     <Compile Include="Part2\Solution7.cs" />
     <Compile Include="Part2\Sulution9.cs" />
     <Compile Include="Part2\Sulution8.cs" />
+    <Compile Include="Part3\Solution1.cs" />
+    <Compile Include="Part3\Solution2.cs" />
+    <Compile Include="Part3\Solution3.cs" />
+    <Compile Include="Part3\Solution4.cs" />
+    <Compile Include="Part3\Solution5.cs" />
+    <Compile Include="Part3\Solution6.cs" />
+    <Compile Include="Part3\Solution7.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
