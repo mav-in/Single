@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
+//Методы
 namespace Single.Part2
 {
-    public class Solution9
+    public class Solution11
     {
         public static void Execute()
         {
@@ -22,7 +23,10 @@ namespace Single.Part2
             Console.WriteLine("Значение g = {0}", g);
             Console.ReadLine();
         }
-
+        int One()
+        {
+          return 1;
+        }
         static string Hello()
         {
             return "Hell to World!";

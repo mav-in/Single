@@ -1,8 +1,9 @@
 ﻿using System;
 
+//Программа сортировки массива
 namespace Single.Part2
 {
-    public class Solution8
+    public class Solution10
     {
         public static void Execute()
         {

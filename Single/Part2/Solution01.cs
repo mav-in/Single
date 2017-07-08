@@ -1,17 +1,19 @@
 ﻿using System;
 
+//Типы данных и переменные
 namespace Single.Part2
 {
-    public class Solution1
+    public class Solution01
     {
         public static void Execute()
         {
-            var dt = new DataType();
+            var dt = new DataType1();
             dt.Run();
+            //DataType.Run();
         }
     }
 
-    internal class DataType
+    internal class DataType1
     {
         public void Run()
         {

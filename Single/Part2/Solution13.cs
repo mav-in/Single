@@ -1,64 +1,46 @@
 ﻿using System;
+using System.Linq;
 
+//Массив параметров и ключевое слово params
 namespace Single.Part2
 {
     public class Solution13
     {
         public static void Execute()
         {
-            // СТРУКТУРЫ
+            // МАССИВ ПАРАМЕТРОВ И КЛЮЧЕВОЕ СЛОВО PARAMS
 
-            Book book;
-            book.name = "Война и мир";
-            book.author = "Л. Н. Толстой";
-            book.year = 1869;
+            Addition(1, 2, 3, 4, 5);
 
-            //Выведем информацию о книге book на экран
-            book.Info();
+            int[] array = new int[] { 1, 2, 3, 4 };
+            Addition(array);
 
-            //Использование массива
-            Book[] books = new Book[3];
-            books[0].name = "Война и мир";
-            books[0].author = "Л. Н. Толстой";
-            books[0].year = 1869;
+            Addition();
 
-            books[1].name = "Преступление и наказание";
-            books[1].author = "Ф. М. Достоевский";
-            books[1].year = 1866;
-
-            books[2].name = "Отцы и дети";
-            books[2].author = "И. С. Тургенев";
-            books[2].year = 1862;
-
-            foreach (Book b in books)
-            {
-                b.Info();
-            }
-
-            //Конструкторы в структурах
-            Book book3 = new Book("Война и мир", "Л. Н. Толстой", 1869);
-            book3.Info();
-
+            AdditionArray(array, 4);
             Console.ReadLine();
         }
-    }
 
-    struct Book
-    {
-        public string name;
-        public string author;
-        public int year;
-
-        // конструкор
-        public Book(string n, string a, int y)
+        // передача параметра с params
+        static void Addition(params int[] integers)
         {
-            name = n;
-            author = a;
-            year = y;
+            int result = 0;
+            for (int i = 0; i < integers.Length; i++)
+            {
+                result += integers[i];
+            }
+            Console.WriteLine(result);
         }
 
-        public void Info() {
-            Console.WriteLine("Книга '{0}' (автор {1}) была издана в {2} году", name, author, year);
+        // передача массива
+        static void AdditionArray(int[] integers, int k)
+        {
+            int result = 0;
+            for (int i = 0; i < integers.Length; i++)
+            {
+                result += (integers[i] * k);
+            }
+            Console.WriteLine(result);
         }
     }
 }

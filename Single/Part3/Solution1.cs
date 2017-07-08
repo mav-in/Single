@@ -1,12 +1,13 @@
 ﻿using System;
 
+//Классы и объекты
 namespace Single.Part3
 {
     public class Solution1
     {
         public static void Execute()
         {
-            // КЛАССЫ И ОБЪЕКТЫ1
+            // КЛАССЫ И ОБЪЕКТЫ
 
             Book b1 = new Book("Война и мир", "Л. Н. Толстой", 1869);
             b1.GetInformation();
@@ -62,6 +63,15 @@ namespace Single.Part3
         public string author;
         public int year;
     }
+
+    partial class BookPartitial
+    {
+        public void Info()
+        {
+          Console.WriteLine("Книга '{0}' (автор {1}) была издана в {2} году", name, author, year);
+        }
+    }
+
     partial class BookPartitial
     {
         public BookPartitial(string name, string author, int year)

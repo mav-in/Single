@@ -24,10 +24,10 @@ namespace Single.Part3
         {
             private string _name;
             private int _age;
-            // Автоматическое свойство
+            // Автоматическое свойство, начинаяс C# 6.0
             public int Sum { get; private set; } = 100;
             public char Sex { get; set; } = 'M';
-            public int IQ { get; } = 90;
+            public int IQ { get; set; } = 90;
 
             public Person(string _name, int _age)
             {

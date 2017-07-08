@@ -1,8 +1,9 @@
 ﻿using System;
 
+//Циклы
 namespace Single.Part2
 {
-    public class Solution7
+    public class Solution08
     {
         public static void Execute()
         {

@@ -1,8 +1,9 @@
 ﻿using System;
 
+//Условные конструкции
 namespace Single.Part2
 {
-    public class Solution6
+    public class Solution07
     {
         public static void Execute()
         {

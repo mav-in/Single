@@ -1,63 +1,57 @@
 ﻿using System;
-using System.IO;
 
+//Область видимости (контекст) переменных
 namespace Single.Part2
 {
+    // начало контекста класса
     public class Solution14
     {
+        // переменная уровня класса
+        static int a = 9;
+
+        // начало контекста метода Execute
         public static void Execute()
         {
-            // ОБРАБОТКА ИСКЛЮЧЕНИЙ
+            // переменная уровня метода
+            int b = a - 1;
 
-            int[] a = new int[4];
-            Console.Write("Ввведите размерность массива: ");
-            try {
-                int n;
-                string input = Console.ReadLine();
-                if (Int32.TryParse(input, out n)) {
-                    n *= n;
-                    Console.WriteLine("Квадрат числа: " + n);
-                }
-                else {
-                    Console.WriteLine("Некорректный ввод");
-                }
-                //int n = Convert.ToInt32(Console.ReadLine()); // Тут может возникнуть исключение
-                if (n <= 0) {
-                    throw new Exception("Задан размер массива менее 1-го элемента");
-                }
-                a[n] = 4; // Тут может возникнуть исключение
-                Console.WriteLine("Завершение блока try");
-            }
-            catch (FileNotFoundException ex)
-            {
-                // Обработка исключения, возникшего при отсутствии файла
-            }
-            catch (IOException ex)
-            {
-                // Обработка исключений ввода-вывода
-            }
-            catch (Exception ex) {
-                Console.WriteLine("Ошибка: " + ex.Message);
-            }
-            finally {
-                Console.WriteLine("Блок finally");
-            }
-            Console.ReadLine();
+            { // начало контекста блока кода
+                // переменная уровня блока кода
+                int c = b - 1;
+            } // конец контекста блока кода, переменная с уничтожается
 
-            // VS2015 Фильтры исключений
-            int x = 1;
-            int y = 0;
+            // так нельзя, переменная c определена в блоке кода
+            //Console.WriteLine(c);
 
-            try {
-                int result = x / y;
-                Console.WriteLine(result);
-            }
-            catch (Exception ex) when (y == 0) {
-                Console.WriteLine("y не должен быть равен 0");
-            }
-            catch (Exception ex) {
-                Console.WriteLine(ex.Message);
-            }
+            // так нельзя, переменная d определена в другом методе
+            //Console.WriteLine(d);
+
+            Display();
+        } // конец контекста метода Execute, переменная b уничтожается
+
+        static void Display() // начало контекста метода Display
+        {
+            // переменная a определена в контексте класса, поэтому доступна
+            int d = a + 1;
+            var e = new InternalClass().d;
+            var s = new InternalClass();
+            var p = s.d;
+            InternalClass.InternalDisplay();
+        } // конец конекста метода Display, переменные d, e, s и p уничтожаются
+    } // конец контекста класса, переменная a уничтожается
+
+    // начало контекста внутреннего класса
+    internal class InternalClass
+    {
+        // переменная d определена в контексте класса как публичная, поэтому доступна
+        public int d = 1;
+
+        public static void InternalDisplay() // начало контекста метода InternalDisplay
+        {
+            int a = 5; // скрывает переменную a, которая объявлена на уровне класса
+            Console.WriteLine(a); // 5
+            // работать не будет
+            //Console.WriteLine(this.a);
         }
-    }
+    } // конец внутреннего контекста класса, переменная d уничтожается
 }

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.1.0-rc1-20151109-01\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.1.0-rc1-20151109-01\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,9 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Single</RootNamespace>
     <AssemblyName>Single</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>7a51b744</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +38,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0-preview2-25405-01\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,23 +50,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Part1\Solution1.cs" />
-    <Compile Include="Part2\Solution1.cs" />
-    <Compile Include="Part2\Solution10.cs" />
-    <Compile Include="Part2\Solution11.cs" />
-    <Compile Include="Part2\Solution12.cs" />
+    <Compile Include="Part1\Solution01.cs" />
+    <Compile Include="Part2\Solution02.cs" />
+    <Compile Include="Part2\Solution01.cs" />
     <Compile Include="Part2\Solution13.cs" />
-    <Compile Include="Part2\Solution14.cs" />
     <Compile Include="Part2\Solution15.cs" />
     <Compile Include="Part2\Solution16.cs" />
-    <Compile Include="Part2\Solution2.cs" />
-    <Compile Include="Part2\Solution3.cs" />
-    <Compile Include="Part2\Solution4.cs" />
-    <Compile Include="Part2\Solution5.cs" />
-    <Compile Include="Part2\Solution6.cs" />
-    <Compile Include="Part2\Solution7.cs" />
-    <Compile Include="Part2\Sulution9.cs" />
-    <Compile Include="Part2\Sulution8.cs" />
+    <Compile Include="Part2\Solution17.cs" />
+    <Compile Include="Part2\Solution18.cs" />
+    <Compile Include="Part2\Solution19.cs" />
+    <Compile Include="Part2\Solution23.cs" />
+    <Compile Include="Part2\Solution22.cs" />
+    <Compile Include="Part2\Solution21.cs" />
+    <Compile Include="Part2\Solution20.cs" />
+    <Compile Include="Part2\Solution14.cs" />
+    <Compile Include="Part2\Solution05.cs" />
+    <Compile Include="Part2\Solution04.cs" />
+    <Compile Include="Part2\Solution06.cs" />
+    <Compile Include="Part2\Solution03.cs" />
+    <Compile Include="Part2\Solution09.cs" />
+    <Compile Include="Part2\Solution07.cs" />
+    <Compile Include="Part2\Solution08.cs" />
+    <Compile Include="Part2\Sulution12.cs" />
+    <Compile Include="Part2\Sulution11.cs" />
+    <Compile Include="Part2\Sulution10.cs" />
     <Compile Include="Part3\Solution1.cs" />
     <Compile Include="Part3\Solution2.cs" />
     <Compile Include="Part3\Solution3.cs" />
@@ -73,8 +87,15 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.1.0-rc1-20151109-01\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.1.0-rc1-20151109-01\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

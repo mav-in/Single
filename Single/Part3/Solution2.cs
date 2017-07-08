@@ -1,5 +1,6 @@
 ﻿using System;
 
+//Модификаторы доступа
 namespace Single.Part3
 {
     public class Solution2

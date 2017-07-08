@@ -1,5 +1,6 @@
 ﻿using System;
 
+//Константы и поля для чтения
 namespace Single.Part3
 {
     public class Solution3

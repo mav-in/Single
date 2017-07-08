@@ -1,8 +1,9 @@
 ﻿using System;
 
+//Массивы
 namespace Single.Part2
 {
-    public class Solution5
+    public class Solution09
     {
         public static void Execute()
         {
