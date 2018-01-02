@@ -3,7 +3,7 @@ using System.Dynamic;
 
 namespace Single.Part3
 {
-    public class Solution6
+    public class Solution06
     {
         public static void Execute()
         {

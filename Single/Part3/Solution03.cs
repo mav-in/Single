@@ -3,7 +3,7 @@
 //Константы и поля для чтения
 namespace Single.Part3
 {
-    public class Solution3
+    public class Solution03
     {
         const double PI = 3.14;
         const double E = 2.71;
@@ -29,7 +29,7 @@ namespace Single.Part3
         class MathLib
         {
             //Константы
-            public const double PI = 3.141;
+            public const double PI = 3.1415;
             public const double E = 2.81;
             //public const double K;
 

@@ -2,7 +2,7 @@
 
 namespace Single.Part3
 {
-    public class Solution4
+    public class Solution04
     {
         public static void Execute()
         {

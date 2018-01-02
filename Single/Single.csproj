@@ -74,13 +74,13 @@
     <Compile Include="Part2\Sulution12.cs" />
     <Compile Include="Part2\Sulution11.cs" />
     <Compile Include="Part2\Sulution10.cs" />
-    <Compile Include="Part3\Solution1.cs" />
-    <Compile Include="Part3\Solution2.cs" />
-    <Compile Include="Part3\Solution3.cs" />
-    <Compile Include="Part3\Solution4.cs" />
-    <Compile Include="Part3\Solution5.cs" />
-    <Compile Include="Part3\Solution6.cs" />
-    <Compile Include="Part3\Solution7.cs" />
+    <Compile Include="Part3\Solution01.cs" />
+    <Compile Include="Part3\Solution02.cs" />
+    <Compile Include="Part3\Solution03.cs" />
+    <Compile Include="Part3\Solution04.cs" />
+    <Compile Include="Part3\Solution05.cs" />
+    <Compile Include="Part3\Solution06.cs" />
+    <Compile Include="Part3\Solution07.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

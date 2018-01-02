@@ -3,7 +3,7 @@
 //Классы и объекты
 namespace Single.Part3
 {
-    public class Solution1
+    public class Solution01
     {
         public static void Execute()
         {
@@ -15,15 +15,15 @@ namespace Single.Part3
             Book b2 = new Book();
             b2.GetInformation();
 
-            Book b3 = new Book();
+            BookPartitial b3 = new BookPartitial();
             b3.name = "Война и мир";
             b3.author = "Л. Н. Толстой";
             b3.year = 1869;
             b3.GetInformation();
 
-            Book b4 = new Book();
+            BookPartitial b4 = new BookPartitial();
             // присваивание значения без явного вызова конструктора
-            b4 = new Book { name = "Отцы и дети", author = "И. С. Тургенев", year = 1862 };
+            b4 = new BookPartitial { name = "Отцы и дети", author = "И. С. Тургенев", year = 1862 };
             b4.GetInformation();
 
             Console.ReadLine();
@@ -74,6 +74,12 @@ namespace Single.Part3
 
     partial class BookPartitial
     {
+        public BookPartitial()
+        {
+            name = "неизвестно";
+            author = "неизвестно";
+            year = 0;
+        }
         public BookPartitial(string name, string author, int year)
         {
             this.name = name;
